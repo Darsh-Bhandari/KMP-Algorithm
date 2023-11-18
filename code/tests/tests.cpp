@@ -1,6 +1,7 @@
-#include "kmp.h"
 #include <catch2/catch_test_macros.hpp>
 #include <sstream>
+
+#include "kmp.h"
 
 TEST_CASE("PreprocessLPS Test1", "[weight=5]")
 {
