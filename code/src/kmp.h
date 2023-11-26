@@ -11,10 +11,18 @@
 #include <algorithm>
 #include <fstream>
 
-void preprocessLPS(const std::string& pattern, std::vector<int>& lps);
+class KmpAlgorithm {
+    public:
+        void preprocessLPS(const std::string& pattern);
+        std::vector<int> searchKMP(const std::string& text, const std::string& pattern);
+        std::string readFileToString(const std::string& filePath);
+        void incrementNumComparisons();
+        size_t getNumComparisons();
+        std::vector<int> getLps();
 
-std::vector<int> searchKMP(const std::string& text, const std::string& pattern);
+    private:
+        size_t numComparisons = 0;
+        std::vector<int> lps;
+        
+};
 
-std::string readFileToString(const std::string& filePath);
-
-size_t getNumComparisons();

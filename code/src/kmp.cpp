@@ -4,9 +4,7 @@
 
 #include "kmp.h"
 
-int numComparisons = 0;
-
-void preprocessLPS(const std::string& pattern, std::vector<int>& lps) {
+void KmpAlgorithm::preprocessLPS(const std::string& pattern) {
 
     // Set the begining variables with the suffix starting at 0 and the first index being at 1
     int previous = 0;
@@ -35,20 +33,19 @@ void preprocessLPS(const std::string& pattern, std::vector<int>& lps) {
     return;
 }
 
-std::vector<int> searchKMP(const std::string& text, const std::string& pattern) {
+std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::string& pattern) {
     std::vector<int> solution;
 
     int textSize = text.size();
     int patternSize = pattern.size();
 
-    std::vector<int> lps;
-    preprocessLPS(pattern, lps);
+    preprocessLPS(pattern);
 
     int textIndex = 0;
     int patternIndex = 0;
     
     while (textIndex < textSize) {
-        numComparisons++;
+        incrementNumComparisons();
         if (pattern[patternIndex] == text[textIndex]) {
             textIndex++;
             patternIndex++;
@@ -72,7 +69,7 @@ std::vector<int> searchKMP(const std::string& text, const std::string& pattern) 
     return solution;
 }
 
-std::string readFileToString(const std::string& filePath) {
+std::string KmpAlgorithm::readFileToString(const std::string& filePath) {
     std::ifstream file(filePath);
   
     std::stringstream content;
@@ -89,7 +86,15 @@ std::string readFileToString(const std::string& filePath) {
     return content.str();
 }
 
-size_t getNumComparisons() {
+size_t KmpAlgorithm::getNumComparisons() {
     return numComparisons;
+}
+
+void KmpAlgorithm::incrementNumComparisons() {
+    numComparisons += 1;
+}
+
+std::vector<int> KmpAlgorithm::getLps() {
+    return lps;
 }
 
