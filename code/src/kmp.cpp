@@ -4,7 +4,7 @@
 
 #include "kmp.h"
 
-void KmpAlgorithm::preprocessLPS(const std::string& pattern) {
+void KmpAlgorithm::preprocessLPS(const std::string& pattern) { // Construct the lps array
 
     // Set the begining variables with the suffix starting at 0 and the first index being at 1
     int previous = 0;
@@ -33,7 +33,7 @@ void KmpAlgorithm::preprocessLPS(const std::string& pattern) {
     return;
 }
 
-std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::string& pattern) {
+std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::string& pattern) { // Conduct pattern searching
     std::vector<int> solution;
 
     int textSize = text.size();
@@ -69,13 +69,16 @@ std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::str
     return solution;
 }
 
-std::string KmpAlgorithm::readFileToString(const std::string& filePath) {
-    std::ifstream file(filePath);
+std::string KmpAlgorithm::readFileToString(const std::string& filePath) { // Convert file to text to be analyzed
+    /*
+        TO-DO: figure out how to make it such that avoiding newline characters doesn't cause the text to break near the end.
+    */
+    std::ifstream file(filePath); // Convert file path to ifstream to be read
   
     std::stringstream content;
     char current;
 
-    while (file.get(current)) {
+    while (file.get(current)) { // Read line by line and ignore newline characters
         if (current != '\n') {
             content << current;
         }
@@ -83,18 +86,18 @@ std::string KmpAlgorithm::readFileToString(const std::string& filePath) {
 
     file.close();
 
-    return content.str();
+    return content.str(); // Return text as string
 }
 
-size_t KmpAlgorithm::getNumComparisons() {
+size_t KmpAlgorithm::getNumComparisons() { // Return the number of comparisons done between characters in text
     return numComparisons;
 }
 
-void KmpAlgorithm::incrementNumComparisons() {
+void KmpAlgorithm::incrementNumComparisons() { // Increment the number of comparisons done between characters in text
     numComparisons += 1;
 }
 
-std::vector<int> KmpAlgorithm::getLps() {
+std::vector<int> KmpAlgorithm::getLps() { // Return the lps array constructed for a pattern
     return lps;
 }
 
