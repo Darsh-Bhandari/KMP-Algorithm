@@ -74,19 +74,21 @@ std::string KmpAlgorithm::readFileToString(const std::string& filePath) { // Con
         TO-DO: figure out how to make it such that avoiding newline characters doesn't cause the text to break near the end.
     */
     std::ifstream file(filePath); // Convert file path to ifstream to be read
-  
-    std::stringstream content;
-    char current;
 
-    while (file.get(current)) { // Read line by line and ignore newline characters
-        if (current != '\n') {
-            content << current;
-        }
+    if (!file.is_open()) { // check if the file is open
+        return "No file read.";
     }
-
+  
+    std::stringstream buffer;
+    buffer << file.rdbuf(); // extract buffer stream from file
+    std::string content = buffer.str(); // change to string
     file.close();
 
-    return content.str(); // Return text as string
+    content.erase(std::remove(content.begin(), content.end(), '\n'), content.end()); // remove the newline characters
+    content.erase(std::remove(content.begin(), content.end(), '\r'), content.end()); // remove the return characters
+
+
+    return content; // return text
 }
 
 size_t KmpAlgorithm::getNumComparisons() { // Return the number of comparisons done between characters in text
