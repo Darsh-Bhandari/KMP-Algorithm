@@ -28,6 +28,42 @@ TEST_CASE("PreprocessLPS Test2", "[weight=5]")
     REQUIRE(actual == std::vector<int>{0, 0, 0, 0, 0, 1});
 }
 
+TEST_CASE("PreprocessLPS Test3", "[weight=5]")
+{
+    std::string pattern = "aabbcdeaabacdg";
+
+    KmpAlgorithm kmp;
+    kmp.preprocessLPS(pattern);
+
+    std::vector<int> actual = kmp.getLps();
+    
+    REQUIRE(actual == std::vector<int>{0, 1, 0, 0, 0, 0, 0, 1, 2, 3, 1, 0, 0, 0});
+}
+
+TEST_CASE("PreprocessLPS Test4", "[weight=5]")
+{
+    std::string pattern = "fbsjekgbqscfbgfjbsbdbf";
+
+    KmpAlgorithm kmp;
+    kmp.preprocessLPS(pattern);
+
+    std::vector<int> actual = kmp.getLps();
+    
+    REQUIRE(actual == std::vector<int>{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 0, 0, 0, 0, 1});
+}
+
+TEST_CASE("PreprocessLPS Test5", "[weight=5]")
+{
+    std::string pattern = "a";
+
+    KmpAlgorithm kmp;
+    kmp.preprocessLPS(pattern);
+
+    std::vector<int> actual = kmp.getLps();
+    
+    REQUIRE(actual == std::vector<int>{0});
+}
+
 TEST_CASE("SearchKMP Test", "[weight=5]")
 {
     KmpAlgorithm kmp;
