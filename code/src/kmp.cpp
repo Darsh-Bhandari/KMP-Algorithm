@@ -63,9 +63,6 @@ std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::str
         }
     } 
 
-    std::cout << "numComparisons = " << numComparisons << std::endl;
-    std::cout << "textlength  = " << (textSize) << std::endl;
-
     return solution;
 }
 
