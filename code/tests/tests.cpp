@@ -150,8 +150,6 @@ TEST_CASE("SearchKMP Test4 (10,448 Characters)", "[weight=5]")
     KmpAlgorithm kmp;
     std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Wonderland-10448-Characters.txt");
 
-   std::string text = kmp.readFileToString(filePath);
-
     std::string pattern = "the";
 
     size_t worstCaseNumComparisons = text.size();
