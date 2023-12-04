@@ -124,7 +124,7 @@ TEST_CASE("SearchKMP Test2 (100 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test3 (1,000 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Percy.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Percy-1000-Characters.txt");
 
     std::string pattern = "half-blood";
 
