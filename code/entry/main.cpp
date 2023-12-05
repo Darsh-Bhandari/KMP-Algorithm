@@ -15,7 +15,7 @@ int main()
 {
     KmpAlgorithm kmp;
 
-    // std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Lotr-2462922-Characters.txt");
+    // std::string text = kmp.readFileToString("../../data/Hp-100-Characters.txt");
     std::string text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non porttitor nulla, nec blandit sem";
 
     std::string pattern = "ip";
