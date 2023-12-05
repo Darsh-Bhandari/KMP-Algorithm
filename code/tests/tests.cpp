@@ -6,7 +6,7 @@
 TEST_CASE("Read File Test1", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/10-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/10-Characters.txt");
 
     REQUIRE(text == "4676343341");
 }
@@ -75,7 +75,7 @@ TEST_CASE("PreprocessLPS Test5", "[weight=5]")
 TEST_CASE("SearchKMP Test1 (10 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/10-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/10-Characters.txt");
 
     std::string pattern = "34";
 
@@ -99,7 +99,7 @@ TEST_CASE("SearchKMP Test1 (10 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test2 (100 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Hp-100-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Hp-100-Characters.txt");
 
     std::string pattern = "ri";
 
@@ -124,7 +124,7 @@ TEST_CASE("SearchKMP Test2 (100 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test3 (1,000 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Percy-1000-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Percy-1000-Characters.txt");
 
     std::string pattern = "half-blood";
 
@@ -148,7 +148,7 @@ TEST_CASE("SearchKMP Test3 (1,000 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test4 (10,448 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Wonderland-10448-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Wonderland-10448-Characters.txt");
 
     std::string pattern = "the";
 
@@ -173,7 +173,7 @@ TEST_CASE("SearchKMP Test4 (10,448 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test5 (101,148 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Lotr-101148-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Lotr-101148-Characters.txt");
 
     std::string pattern = "Frodo";
 
@@ -197,7 +197,7 @@ TEST_CASE("SearchKMP Test5 (101,148 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test6 (101,148 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Lotr-101148-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Lotr-101148-Characters.txt");
 
     std::string pattern = "pa";
 
@@ -221,7 +221,7 @@ TEST_CASE("SearchKMP Test6 (101,148 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test7 (506,516 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Hobbit-506516-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Hobbit-506516-Characters.txt");
 
     std::string pattern = "Gandalf";
 
@@ -245,7 +245,7 @@ TEST_CASE("SearchKMP Test7 (506,516 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test8 (506,516 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Hobbit-506516-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Hobbit-506516-Characters.txt");
 
     std::string pattern = "ed";
 
@@ -269,7 +269,7 @@ TEST_CASE("SearchKMP Test8 (506,516 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test9 (2,462,922 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Lotr-2462922-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Lotr-2462922-Characters.txt");
 
     std::string pattern = "ru";
 
@@ -293,7 +293,7 @@ TEST_CASE("SearchKMP Test9 (2,462,922 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test10 (2,462,922 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Lotr-2462922-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Lotr-2462922-Characters.txt");
 
     std::string pattern = "Baggins";
 
@@ -317,7 +317,7 @@ TEST_CASE("SearchKMP Test10 (2,462,922 Characters)", "[weight=5]")
 TEST_CASE("SearchKMP Test11 (2,462,922 Characters)", "[weight=5]")
 {
     KmpAlgorithm kmp;
-    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data2/Lotr-2462922-Characters.txt");
+    std::string text = kmp.readFileToString("/workspaces/fa23_cs225_.release/KMP-Algorithm/data/Lotr-2462922-Characters.txt");
 
     std::string pattern = "BAGGINS";
 
