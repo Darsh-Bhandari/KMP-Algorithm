@@ -3,7 +3,8 @@
 ## Algorithm Summary
 The KMP Algorithm is a pattern finding algorithm that searches for occurences of a particular pattern in a given text. The algorithm works by precomputing an array that corresponds to the maximum length of matching proper prefixes and suffixes in the pattern. After computing this array, the search algorithm is able to skip unesscesary character comparisons based on that information. The KMP Algorithm has a perceived runtime of O(n+m) where n is the length of the text and m is the length of the pattern. In the worst case, it will make "n" character comparisons of the text. This makes it significantly faster than naive pattern searching which has a run time of O(n^2) and will make "(n-m+1)*m" character comparisons.
 
-In our project, the KMPAlgorithm class can read in txt files to be searched and return a vector with all locations of the occurance of a provided pattern.
+## Project Description
+In our project, the KMPAlgorithm class can read in txt files to be searched and return a vector with all locations of the occurance of a provided pattern. Our algorithm is meant to be case sensitive, meaning that if the pattern is "HELLO", instances of the pattern being "hello" will not be recognized. This was a deliberate design choice as we wanted our algorithm to be exact in where it finds the patterns. A further description of the KMPAlgorithm class's methods can be found below, and descriptions on the tests can be found in the final_report.pdf file located in the documents folder.
 
 ## Github Organization
 This section highlights the organization of the repository.
@@ -23,7 +24,7 @@ This section highlights the organization of the repository.
     - Presentation: A video file that summarizes the journey taken to develop this entire project. Includes summaries on our goals from the project, the development process, and our conclusions. 
 
 ## Function Description
-This section provides descriptions on what each function does in the KMPAlgorithm class.
+This section provides brief descriptions on what each function does in the KMPAlgorithm class. The source code can be found in the "kmp.h" and "kmp.cpp" files.
 
 - Public functions
     - void preprocessLPS(const std::string& pattern)
@@ -44,11 +45,10 @@ This section provides descriptions on what each function does in the KMPAlgorith
     - std::vector<int> lps
         - Store lps array for pattern matching
 
-
 ## Running Instructions
 This section details how to run and utilze the code.
 
-1. Clone the repository and ensure that you are in the cs225 Fall 2023 container to ensure for correct results.
+1. Clone the repository and ensure that you are in the cs225 Fall 2023 development container to ensure for correct results.
 2. Open the command line/terminal and make sure you are located in the KMP-Algorithm directory. If not, use "cd /workspaces/fa23_cs225_.release/KMP-Algorithm" to enter.
 3. Use "cd /code/" to enter the code folder.
 4. Run the command "mkdir build" to create the build directory. 
