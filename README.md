@@ -49,7 +49,7 @@ This section provides brief descriptions on what each function does in the KMPAl
 This section details how to run and utilize the code.
 
 1. Clone the repository and ensure that you are in the cs225 Fall 2023 development container to ensure correct results.
-2. Open the command line/terminal and make sure you are located in the KMP-Algorithm directory. If not, use "cd /workspaces/fa23_cs225_.release/KMP-Algorithm" to enter.
+2. Open the command line/terminal and make sure you are located in the KMP-Algorithm directory. If not, use the "cd" command in the terminal to enter the KMP-Algorithm directory.
 3. Use "cd /code/" to enter the code folder.
 4. Run the command "mkdir build" to create the build directory. 
 5. Run the command "cd build" to enter the build directory.
