@@ -1,7 +1,7 @@
 # KMP Algorithm Project
 
 ## Algorithm Summary
-The KMP Algorithm is a pattern-finding algorithm that searches for occurrences of a particular pattern in a given text. The algorithm works by precomputing an array that corresponds to the maximum length of matching proper prefixes and suffixes in the pattern. After computing this array, the search algorithm can skip unnecessary character comparisons based on that information. The KMP Algorithm has a perceived runtime of O(n+m) where n is the length of the text and m is the length of the pattern. In the worst case, it will make "n" character comparisons of the text. This makes it significantly faster than naive pattern searching which has a run time of O(n^2) and will make "(n-m+1)*m" character comparisons.
+The KMP Algorithm is a pattern-finding algorithm that searches for occurrences of a particular pattern in a given text. The algorithm works by precomputing an array that corresponds to the maximum length of matching proper prefixes and suffixes in the pattern. After computing this array, the search algorithm can skip unnecessary character comparisons based on that information. The KMP Algorithm has a perceived runtime of O(n) where "n" is the length of the text. However, in the worst case, it will have a run time of O(n + m) where "m" is the length of the pattern. In the worst case, it will make "n" character comparisons of the text. This makes it significantly faster than naive pattern searching which has a run time of O(n^2) and will make "(n-m+1)*m" character comparisons.
 
 ## Project Description
 In our project, the KMPAlgorithm class can read text files to be searched and return a vector with all locations of the occurrence of a provided pattern. Our algorithm is meant to be case sensitive, meaning that if the pattern is "HELLO", instances of the text "hello" will not be recognized. This was a deliberate design choice as we wanted our algorithm to be exact in where it finds the patterns. A further description of the KMPAlgorithm class's methods can be found below, and descriptions of the tests can be found in the final_report.pdf file located in the documents folder.
@@ -11,7 +11,7 @@ This section highlights the organization of the repository.
 
 - Code Folder
     - Build: Contains files necessary for running all executable files.
-    - Entry: Contains "main.cpp", a file that contains the main method where the KMPAlgorithm class can be declared and utilized.
+    - Entry: Contains "main.cpp", a file that contains the main method where the KMPAlgorithm class can be declared and utilized. Benchmarking code examples are included in the main.cpp file.
     - Src: Contains the header and source file for the KMP class. Called "kmp.h" and "kmp.cpp".
     - Tests: Contains "tests.cpp", a file that has a large number of tests to assess the correctness of our algorithm.
 - Data Folder
@@ -55,7 +55,7 @@ This section details how to run and utilize the code.
 5. Run the command "cd build" to enter the build directory.
 6. Run "cmake .." to create the makefile necessary to run and compile your code.
 7. Now, your code is ready to be run. Run "make" in the command line to compile the code. Now, run "./test" to run the tests file that contains our provided tests to ensure the correctness of the algorithm or run "./main" to run the main file.
-8. Now that the code has been confirmed to be able to execute and tested to be correct, enter the "main.cpp" file. There, you will see an example of how to declare a KMPAlgorithm object and use it to obtain all occurances of a pattern in a text.
+8. Now that the code has been confirmed to be able to execute and tested to be correct, enter the "main.cpp" file. There, you will see the benchmarking examples that prove how fast the algorithm is. It can also be used as a reference on how to declare a KMPAlgorithm object and use it to obtain all occurances of a pattern in a text.
     - Declare a KMPAlgorithm object.
     - Either use the readFileToString method to read a txt file into a string or declare your own text in a string variable.
     - Declare a string variable for the pattern you want to search for.
