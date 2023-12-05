@@ -39,11 +39,13 @@ std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::str
     int textSize = text.size();
     int patternSize = pattern.size();
 
+    if (patternSize > textSize) return solution; // impossible to find pattern, so avoid preprocessing
+
     preprocessLPS(pattern);
 
     int textIndex = 0;
     int patternIndex = 0;
-    
+
     while (textIndex < textSize) {
         incrementNumComparisons();
         if (pattern[patternIndex] == text[textIndex]) {
