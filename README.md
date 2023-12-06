@@ -19,7 +19,8 @@ This section highlights the organization of the repository.
 - Documents Folder
     - Feedback: Feedback given by our mentors on the state of our project, algorithm, and repository as a whole.
     - Log: PDF file that contains weekly updates on the tasks completed by each team member and goals to be completed for the week.
-    - Proposal: PDF file that contains an initial proposal of our implementation of the KMP Algorithm. Since creating this proposal, we have added to our idea significantly and made modifications as such. 
+    - Proposal: PDF file that contains an initial proposal of our implementation of the KMP Algorithm. Since creating this proposal, we have added to our idea significantly and made modifications as such.
+    - Graphs: Python notebook file that utilizes the Matplotlib and Numpy libraries to create the graphs shown in the final report.
     - Final_Report: PDF file that includes a summary of our datasets, demonstrates the correctness of our algorithm, and estimates the Big O runtime.
     - Presentation: A video file that summarizes the journey taken to develop this entire project. Includes summaries on our goals from the project, the development process, and our conclusions. 
 
