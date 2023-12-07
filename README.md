@@ -22,7 +22,7 @@ This section highlights the organization of the repository.
     - Proposal: PDF file that contains an initial proposal of our implementation of the KMP Algorithm. Since creating this proposal, we have added to our idea significantly and made modifications as such.
     - Graphs: Python notebook file that utilizes the Matplotlib and Numpy libraries to create the graphs shown in the final report.
     - Final_Report: PDF file that includes a summary of our datasets, demonstrates the correctness of our algorithm, and estimates the Big O runtime.
-    - Presentation: A video file that summarizes the journey taken to develop this entire project. Includes summaries on our goals from the project, the development process, and our conclusions. 
+    - Presentation: A markdown file that contains a link to a youtube video presentation that summarizes the journey taken to develop this entire project. Includes summaries on our goals from the project, the development process, how we conducted benchmarking and testing, and final conclusions. 
 
 ## Function Description
 This section provides brief descriptions on what each function does in the KMPAlgorithm class. The source code can be found in the "kmp.h" and "kmp.cpp" files.
