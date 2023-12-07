@@ -39,27 +39,28 @@ std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::str
     int textSize = text.size();
     int patternSize = pattern.size();
 
-    if (patternSize > textSize) return solution; // impossible to find pattern, so avoid preprocessing
+    if (patternSize > textSize) return solution; // Impossible to find pattern, so avoid preprocessing
 
-    preprocessLPS(pattern);
+    preprocessLPS(pattern); // Construct lps array
 
     int textIndex = 0;
     int patternIndex = 0;
 
-    while (textIndex < textSize) {
-        incrementNumComparisons();
-        if (pattern[patternIndex] == text[textIndex]) {
+    while (textIndex < textSize) { // While we are still in the text
+        incrementNumComparisons(); // Increment the number of comparisons we make for testing purposes
+        if (pattern[patternIndex] == text[textIndex]) { // If the pattern and text characters match, increment them both
             textIndex++;
             patternIndex++;
         }
-        if (patternIndex == patternSize) {
+        if (patternIndex == patternSize) { // If we find a match (the full pattern has been gone through), save the match index and
+                                           // and decrement pattern index by one. This gives another chance to see if there is oppertunity for a match
             int match = textIndex - patternIndex;
             solution.push_back(match);
             patternIndex = lps[patternIndex - 1];
-        } else if (textIndex < textSize && pattern[patternIndex] != text[textIndex]) {
-            if (patternIndex != 0)
+        } else if (textIndex < textSize && pattern[patternIndex] != text[textIndex]) { // If there is a mismatch
+            if (patternIndex != 0) // Decrement patern index by one for checking again
                 patternIndex = lps[patternIndex - 1];
-            else {
+            else { // If pattern Index is 0 and cannot be decremented, just increment where we are in the text
                 textIndex++;
             }
         }
@@ -69,9 +70,6 @@ std::vector<int> KmpAlgorithm::searchKMP(const std::string& text, const std::str
 }
 
 std::string KmpAlgorithm::readFileToString(const std::string& filePath) { // Convert file to text to be analyzed
-    /*
-        TO-DO: figure out how to make it such that avoiding newline characters doesn't cause the text to break near the end.
-    */
     std::ifstream file(filePath); // Convert file path to ifstream to be read
 
     if (!file.is_open()) { // check if the file is open
